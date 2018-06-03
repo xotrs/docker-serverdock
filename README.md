@@ -18,9 +18,19 @@ git clone https://github.com/xotrs/docker-serverdock.git
 
 2. Run your containers:
 
+
 ```
 docker-compose up elasticsearch
 ```
+
+
+## Supported Software (Images)
+
+1. Elasticsearch with seunjeon(은전한닢)
+* Used version
+- Target elasticsearch	: 6.1.1
+- Elasticsearch-analysis-seunjeon : 6.1.1.1
+ 
 
 ## Note
 Currently, available only Elasticsearch. 
