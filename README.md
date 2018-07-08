@@ -28,8 +28,8 @@ docker-compose up elasticsearch
 
 1. Elasticsearch with seunjeon(은전한닢)
 * Used version
-- Target elasticsearch	: 5.4.1
-- Elasticsearch-analysis-seunjeon : 5.4.1.1
+- Target elasticsearch	: 6.1.1
+- Elasticsearch-analysis-seunjeon : 6.1.1.1
  
 
 ## Note
