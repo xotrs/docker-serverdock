@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+##########elasticsearch##########
+    elasticsearch:
+      container_name: elasticsearch
+      build: ./elasticsearch
+      environment:
+        - cluster.name=docker-cluster
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      ports:
+        - "9200:9200"
+        - "9300:9300"
+##########nginx##########
+    web:
+      container_name: nginx
+      build: ./nginx
+      restart: always
+      ports:
+        - "80:80"
+##########mysql##########
+    mysql:
+      build: ./mysql
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: PASSWORD
+        MYSQL_DATABASE: DATABASE
+        MYSQL_USER: USER
+        MYSQL_PASSWORD: PASSWORD
+      ports:
+        - "3306:3306"
+##########jenkins##########
+    jenkins:
+      build: ./jenkins
+      restart: always
+      ports:
+        - "8080:8080"
