@@ -27,6 +27,8 @@ services:
     mysql:
       build: ./mysql
       restart: always
+      volumes:
+        - ./mysql/db:/var/lib/mysql
       environment:
         MYSQL_ROOT_PASSWORD: PASSWORD
         MYSQL_DATABASE: DATABASE
