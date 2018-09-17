@@ -40,5 +40,7 @@ services:
     jenkins:
       build: ./jenkins
       restart: always
+      volumes:
+        - ./jenkins/jenkins_data:/var/jenkins_home
       ports:
         - "8080:8080"
