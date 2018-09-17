@@ -20,13 +20,11 @@ services:
     web:
       container_name: nginx
       build: ./nginx
-      restart: always
       ports:
         - "80:80"
 ##########mysql##########
     mysql:
       build: ./mysql
-      restart: always
       volumes:
         - ./mysql/db:/var/lib/mysql
       environment:
@@ -39,7 +37,6 @@ services:
 ##########jenkins##########
     jenkins:
       build: ./jenkins
-      restart: always
       volumes:
         - ./jenkins/jenkins_data:/var/jenkins_home
       ports:
