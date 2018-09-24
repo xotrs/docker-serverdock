@@ -41,6 +41,5 @@ services:
       build: ./jenkins
       volumes:
         - ./jenkins/jenkins_data:/var/jenkins_home
-        - ./jenkins/jenkins_data/properties/application.properties:/var/jenkins_home/workspace/Springboot-Kotlin/application.properties
       ports:
         - "8080:8080"
