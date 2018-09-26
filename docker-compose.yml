@@ -36,6 +36,21 @@ services:
         MYSQL_PASSWORD: PASSWORD
       ports:
         - "3306:3306"
+##########ghost##########
+    ghost:
+      build: ./ghost
+      volumes:
+        - ./ghost/ghost_data:/var/lib/ghost/content
+      ports:
+        - "7777:2368"
+      environment:
+        NODE_ENV: production
+        database__client: #UPDATE ME
+        database__connection__host: #UPDATE ME
+        database__connection__user: #UPDATE ME
+        database__connection__password: #UPDATE ME
+        database__connection__database: #UPDATE ME
+
 ##########jenkins##########
     jenkins:
       build: ./jenkins
