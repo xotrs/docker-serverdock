@@ -24,9 +24,22 @@ services:
         - ./nginx/conf.d:/etc/nginx/conf.d:ro # nginx proxy settings 
         - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro # nginx conf file
         - ./nginx/ssl:/etc/nginx/ssl # if uses ssl
+        - ./nginx/log:/var/log/nginx/ # nginx log location
+
       ports:
         - "80:80" # http
         - "443:443" # https
+##########logstash##########
+    logstash:
+      container_name: logstash
+      build: ./logstash
+      volumes:
+        - ./logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+        - ./nginx/log/cherrypick_co_kr_access.log:/usr/share/logstash/pipeline/cherrypick_co_kr_access.log
+      command: logstash -f /usr/share/logstash/pipeline/logstash.conf
+      ports:
+        - "5000:5000"
+        - "9600:9600"
 ##########mysql##########
     mysql:
       build: ./mysql
