@@ -38,5 +38,9 @@ docker-compose up -d
 
 5. Jenkins
 
+6. Logstash
+
+7. Apache kafka(ing)
+
 ## Note
 It will be updated continuously.
