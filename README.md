@@ -18,11 +18,11 @@ git clone https://github.com/xotrs/docker-serverdock.git
 
 2. Settings config file
 
-3. Run your containers:
+3. Run your (choice) containers:
 
 
 ```
-docker-compose up -d
+docker-compose up -d (mysql ghost etc...)
 ```
 
 
